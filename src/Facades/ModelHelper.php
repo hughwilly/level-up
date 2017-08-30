@@ -1,6 +1,6 @@
 <?php
 
-namespace HughWilly\LevelUp;
+namespace HughWilly\LevelUp\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
