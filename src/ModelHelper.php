@@ -43,7 +43,7 @@ class ModelHelper
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public static function fill($instance, array $attributes = [], $save = false)
+    public function fill($instance, array $attributes = [], $save = false)
     {
         if (in_array(Validatable::class, class_uses_recursive($instance))) {
             $instance->validate($attributes);

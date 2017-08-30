@@ -13,6 +13,6 @@ class ModelHelper extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'model-helper';
+        return \HughWilly\LevelUp\ModelHelper::class;
     }
 }

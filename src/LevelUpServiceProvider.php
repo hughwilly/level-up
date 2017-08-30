@@ -12,10 +12,13 @@ class LevelUpServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('model-helper', function () {
+        $this->app->singleton(ModelHelper::class, function () {
             return new ModelHelper;
         });
+    }
 
-        $this->app->alias('model-helper', ModelHelper::class);
+    public function provides()
+    {
+        return [ModelHelper::class];
     }
 }
