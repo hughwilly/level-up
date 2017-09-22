@@ -1,3 +1,7 @@
+[![Latest Stable Version](https://poser.pugx.org/hughwilly/level-up/v/stable)](https://packagist.org/packages/hughwilly/level-up)
+[![Total Downloads](https://poser.pugx.org/hughwilly/level-up/downloads)](https://packagist.org/packages/hughwilly/level-up)
+[![License](https://poser.pugx.org/hughwilly/level-up/license)](https://packagist.org/packages/hughwilly/level-up)
+
 # A bunch of Laravel helpers
 This package will add various helper functions and classes to your Laravel project.
 
