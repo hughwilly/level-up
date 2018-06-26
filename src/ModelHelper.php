@@ -3,6 +3,7 @@
 namespace HughWilly\LevelUp;
 
 use HughWilly\LevelUp\Traits\Validatable;
+use Illuminate\Database\Eloquent\Model;
 
 class ModelHelper
 {
@@ -14,7 +15,7 @@ class ModelHelper
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function create($model, array $attributes = [])
+    public function create($model, array $attributes = []): Model
     {
         $instance = static::make($model, $attributes);
         $instance->save();
@@ -30,20 +31,21 @@ class ModelHelper
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function make($model, array $attributes = [])
+    public function make($model, array $attributes = []): Model
     {
         return static::fill(new $model, $attributes);
     }
 
-    /**
-     * Fill attributes on a model instance
-     *
-     * @param  \Illuminate\Database\Eloquent\Model|Validatable  $instance
-     * @param  array                                            $attributes
-     *
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    public function fill($instance, array $attributes = [], $save = false)
+	/**
+	 * Fill attributes on a model instance
+	 *
+	 * @param  \Illuminate\Database\Eloquent\Model|Validatable $instance
+	 * @param  array $attributes
+	 *
+	 * @param bool $save
+	 * @return \Illuminate\Database\Eloquent\Model
+	 */
+    public function fill($instance, array $attributes = [], $save = false): Model
     {
         if (in_array(Validatable::class, class_uses_recursive($instance))) {
             $instance->validate($attributes);

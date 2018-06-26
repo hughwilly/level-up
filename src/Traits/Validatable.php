@@ -13,7 +13,7 @@ trait Validatable
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function validate(array $attributes = null)
+    public function validate(array $attributes = null): void
     {
         if (is_null($attributes)) {
             $attributes = $this->getAttributes();
@@ -34,7 +34,7 @@ trait Validatable
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [];
     }
@@ -44,7 +44,7 @@ trait Validatable
      *
      * @return bool
      */
-    public function isValid()
+    public function isValid(): bool
     {
         try {
             $this->validate();
